@@ -1,22 +1,33 @@
-﻿using TimeTable207.Context.Contracts;
+﻿using System.Runtime.CompilerServices;
+using TimeTable207.Context.Contracts;
 using TimeTable207.Context.Contracts.Models;
 
 namespace AutomasterskayaContext
 {
     public class AutomasterskayaContext : IAutomasterskayaContext
     {
-        private ICollection<Car> Cars { get; set; }
+        private ICollection<Car> cars { get; set; }
+        private ICollection<Customer> customers { get; set; }
+        public ICollection<Car> Cars => cars;
 
-        private ICollection<Customer> Customers { get; set; }
-
-        ICollection<Car> IAutomasterskayaContext.Cars => Cars;
-
-        ICollection<Customer> IAutomasterskayaContext.Customers => Customers;
+        public ICollection<Customer> Customers => customers;
 
         public AutomasterskayaContext()
         {
-            Cars = new HashSet<Car>();
-            Customers = new HashSet<Customer>();
+            cars = new HashSet<Car>();
+            customers = new HashSet<Customer>();
+            Seed();
+        }
+
+        private void Seed() 
+        {
+            Customers.Add(new Customer
+            {
+                id = Guid.NewGuid(),
+                FIO = "Павленко Илья Евгеньевич",
+                Adress = "улица Пушкина дом грибоедова",
+                Iphone = "89912980850"
+            }) ;
         }
 
     }

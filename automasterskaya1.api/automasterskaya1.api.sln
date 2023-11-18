@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "automasterskaya1.api", "automasterskaya1.api\automasterskaya1.api.csproj", "{C450213A-C886-4410-B41C-6EDB9F577388}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTable207.Context.Contracts", "TimeTable207.Context.Contracts\TimeTable207.Context.Contracts.csproj", "{DF8FB644-25EA-4CC9-B7E1-EB7757B4473C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automasterskaya.Context.Contracts", "TimeTable207.Context.Contracts\Automasterskaya.Context.Contracts.csproj", "{DF8FB644-25EA-4CC9-B7E1-EB7757B4473C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomasterskayaContext", "AutomasterskayaContext\AutomasterskayaContext.csproj", "{882950B9-2685-4F5D-B3CA-C4066DC8EE71}"
 EndProject
