@@ -40,7 +40,7 @@ namespace TimeTable207.Context.Contracts.Models
         /// <summary>
         /// Год выпуска
         /// </summary>
-        public string Уear { get; set; }
+        public int Year { get; set; }
 
         /// <summary>
         /// Пробег
