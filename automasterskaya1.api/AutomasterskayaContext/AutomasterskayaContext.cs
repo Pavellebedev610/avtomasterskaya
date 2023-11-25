@@ -24,6 +24,7 @@ namespace AutomasterskayaContext
             customers = new HashSet<Customer>();
             services = new HashSet<Service>();
             Seed();
+            
         }
 
         private void Seed() 

@@ -5,17 +5,15 @@ namespace automasterskaya1.api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-
-    public class CarController : ControllerBase
+    public class ServiceController : ControllerBase
     {
 
         private readonly IAutomasterskayaContext context;
 
-        public CarController(IAutomasterskayaContext context)
+        public ServiceController(IAutomasterskayaContext context)
         {
             this.context = context;
         }
-
 
         /// <summary>
         /// 
@@ -23,17 +21,16 @@ namespace automasterskaya1.api.Controllers
         [HttpGet]
         public IActionResult GetAllCustomers()
         {
-            var carlist = context.Cars.ToList();
+            var servicelist = context.Services.ToList();
 
-            return Ok(carlist);
+            return Ok(servicelist);
 
         }
-
         [HttpGet("{id:Guid}")]
-        public IActionResult Get(Guid id)
+        public IActionResult Get(Guid id) 
         {
-            var carlist = context.Cars.FirstOrDefault(x => x.id == id);
-            return Ok(carlist);
+            var servicelist = context.Services.FirstOrDefault(x => x.id == id);
+            return Ok(servicelist);
 
         }
 
