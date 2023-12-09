@@ -2,22 +2,22 @@ using Automasterskaya.Context.Contracts.Models;
 using System.Collections;
 using System.Collections.Generic;
 using TimeTable207.Context.Contracts.Models;
-
+using Microsoft.EntityFrameworkCore;
 namespace TimeTable207.Context.Contracts
 {
-    public interface IAutomasterskayaContext
+    public interface IAutomasterskayaContext 
     {
         /// <summary>
         /// Машины
         /// </summary>
-        ICollection<Car> Cars { get; }
+        DbSet<Car> Cars { get; }
 
         /// <summary>
         /// заказчик
         /// </summary>
-        ICollection<Customer> Customers { get; }
+        DbSet<Customer> Customers { get; }
 
-        ICollection<Service> Services { get; }
+        DbSet<Service> Services { get; }
 
     }
 }

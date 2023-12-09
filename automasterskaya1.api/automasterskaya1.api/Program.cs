@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using TimeTable207.Context.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IAutomasterskayaContext, AutomasterskayaContext.AutomasterskayaContext>();
+
+var conString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContextFactory<AutomasterskayaContext.AutomasterskayaContext> (x => x.UseSqlServer(conString),ServiceLifetime.Scoped);
+builder.Services.AddScoped<IAutomasterskayaContext>(x => x.GetRequiredService<AutomasterskayaContext.AutomasterskayaContext>());
 
 var app = builder.Build();
 
