@@ -1,8 +1,6 @@
 using Automasterskaya.Context.Contracts.Models;
-using System.Collections;
-using System.Collections.Generic;
-using TimeTable207.Context.Contracts.Models;
 using Microsoft.EntityFrameworkCore;
+using TimeTable207.Context.Contracts.Models;
 namespace TimeTable207.Context.Contracts
 {
     public interface IAutomasterskayaContext 
@@ -19,5 +17,6 @@ namespace TimeTable207.Context.Contracts
 
         DbSet<Service> Services { get; }
 
+        int SaveChanges();
     }
 }

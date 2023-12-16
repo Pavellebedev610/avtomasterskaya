@@ -21,7 +21,7 @@ namespace automasterskaya1.api.Controllers
         [HttpGet]
         public IActionResult GetAllCustomers()
         {
-            var customerlist=context.Customers.ToList();
+            var customerlist = context.Customers.ToList();
 
             return Ok(customerlist);
 
@@ -39,25 +39,26 @@ namespace automasterskaya1.api.Controllers
             var item = new Customer
             {
                 id = Guid.NewGuid(),
-                FIO= model.FIO,
-                Adress= model.Adress,
-                Iphone= model.Iphone,
-                CreateAt= DateTime.Now,
-                CreatedBy="Я",
-                UpdatedAt= DateTime.Now,
-                UpdatedBy="Я",
+                FIO = model.FIO,
+                Adress = model.Adress,
+                Iphone = model.Iphone,
+                CreateAt = DateTime.Now,
+                CreatedBy = "Я",
+                UpdatedAt = DateTime.Now,
+                UpdatedBy = "Я",
             };
             context.Customers.Add(item);
+            context.SaveChanges();
             return Ok(item);
         }
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id) 
+        public IActionResult Delete(Guid id)
         {
-            var customer = context.Customers.FirstOrDefault(x => x.id==id);
+            var customer = context.Customers.FirstOrDefault(x => x.id == id);
             if (customer != null)
             {
-                context.Customers.Remove(customer); 
-
+                context.Customers.Remove(customer);
+                context.SaveChanges();
             }
             return Ok();
         }

@@ -6,6 +6,7 @@ using TimeTable207.Context.Contracts.Models;
 
 namespace AutomasterskayaContext
 {
+    //AutomasterskayaContext\AutomasterskayaContext.csproj
     public class AutomasterskayaContext :DbContext, IAutomasterskayaContext
     {
         private DbSet<Car> cars { get; set; }
@@ -21,7 +22,7 @@ namespace AutomasterskayaContext
 
         public AutomasterskayaContext(DbContextOptions<AutomasterskayaContext> options)
             : base(options)
-        { 
+        {
         }
     }
 }
