@@ -1,3 +1,18 @@
+Лебедев Павел Игоревич
+=========
+
+
+ИП-20-7К
+----------
+
+
+тема: Автосервис
+----------
+
+
+![zakaz-naryad — копия](https://github.com/Pavellebedev610/avtomasterskaya/assets/104491992/2e5642e5-0ed5-4345-ade2-c9e232be0b46)
+
+
 ```mermaid
 
 erDiagram
