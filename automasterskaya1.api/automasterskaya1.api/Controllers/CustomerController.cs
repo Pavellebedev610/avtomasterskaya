@@ -26,6 +26,7 @@ namespace automasterskaya1.api.Controllers
             return Ok(customerlist);
 
         }
+
         [HttpGet("{id:Guid}")]
         public IActionResult Get(Guid id)
         {
@@ -33,6 +34,7 @@ namespace automasterskaya1.api.Controllers
             return Ok(customerlist);
 
         }
+
         [HttpPost]
         public IActionResult Create(CustomerModel model)
         {
@@ -51,6 +53,7 @@ namespace automasterskaya1.api.Controllers
             context.SaveChanges();
             return Ok(item);
         }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -62,5 +65,21 @@ namespace automasterskaya1.api.Controllers
             }
             return Ok();
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Edit(Guid id, Customer model)
+        {
+            var customered = context.Customers.FirstOrDefault(x => x.id == id);
+            if (customered == null)
+            {
+                return NotFound();
+            }
+            customered.FIO = model.FIO;
+            customered.Adress = model.Adress;
+            customered.Iphone = model.Iphone;
+            context.SaveChanges();
+            return Ok(customered);
+        }
+
     }
 }
